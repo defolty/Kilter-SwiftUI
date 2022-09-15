@@ -22,12 +22,17 @@ struct ContentView: View {
                     Text(item)
                 }
                 .onDelete(perform: deleteListItem)
+                .onMove(perform: moveListItem)
             }
+            .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("Checklist")
         }
     }
     func deleteListItem(whichElement: IndexSet) {
         checklistItems.remove(atOffsets: whichElement)
+    }
+    func moveListItem(whichElement: IndexSet, destination: Int) {
+        checklistItems.move(fromOffsets: whichElement, toOffset: destination)
     }
 }
 
