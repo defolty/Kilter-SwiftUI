@@ -11,7 +11,7 @@ import SwiftUI
 struct KilterSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ChecklistView()
         }
     }
 }

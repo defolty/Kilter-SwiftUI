@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct ChecklistItem {
-    var name: String
-    var isChecked: Bool = false
-}
-
-struct ContentView: View {
+struct ChecklistView: View {
     @State var checklistItems = [
         ChecklistItem(name: "Walk the dog"),
         ChecklistItem(name: "Brush my teeth"),
@@ -23,19 +18,24 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklistItems, id: \.name) { checklistItem in
+                ForEach(checklistItems) { checklistItem in
                     HStack {
                         Text(checklistItem.name)
                         Spacer()
-                        if checklistItem.isChecked {
-                            Text("✅")
-                        } else {
-                            Text("🔲") }
+                        Text(checklistItem.isChecked ? "✅" : "🔲")
+                    }
+                    .background(Color(UIColor.systemBackground))
+                    .onTapGesture {
+                        if let matchingIndex = self.checklistItems.firstIndex(where: { $0.id == checklistItem.id }) {
+                            self.checklistItems[matchingIndex].isChecked.toggle()
+                        }
                     }
                 }
                 .onDelete(perform: deleteListItem)
                 .onMove(perform: moveListItem)
             }
+            .navigationBarItems(trailing: EditButton())
+            .navigationBarTitle("Checklist")
         }
     }
     func deleteListItem(whichElement: IndexSet) {
@@ -48,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ChecklistView()
     }
 }

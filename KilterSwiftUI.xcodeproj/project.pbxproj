@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2E7ED628D638C8008BAB9A /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E7ED528D638C8008BAB9A /* ChecklistItem.swift */; };
 		FB827D8728D25AE6007BD833 /* KilterSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827D8628D25AE6007BD833 /* KilterSwiftUIApp.swift */; };
-		FB827D8928D25AE6007BD833 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827D8828D25AE6007BD833 /* ContentView.swift */; };
+		FB827D8928D25AE6007BD833 /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB827D8828D25AE6007BD833 /* ChecklistView.swift */; };
 		FB827D8B28D25AE7007BD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB827D8A28D25AE7007BD833 /* Assets.xcassets */; };
 		FB827D8E28D25AE7007BD833 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB827D8D28D25AE7007BD833 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2E7ED528D638C8008BAB9A /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		FB827D8328D25AE6007BD833 /* KilterSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KilterSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB827D8628D25AE6007BD833 /* KilterSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KilterSwiftUIApp.swift; sourceTree = "<group>"; };
-		FB827D8828D25AE6007BD833 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FB827D8828D25AE6007BD833 /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
 		FB827D8A28D25AE7007BD833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB827D8D28D25AE7007BD833 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				FB827D8628D25AE6007BD833 /* KilterSwiftUIApp.swift */,
-				FB827D8828D25AE6007BD833 /* ContentView.swift */,
+				FB2E7ED528D638C8008BAB9A /* ChecklistItem.swift */,
+				FB827D8828D25AE6007BD833 /* ChecklistView.swift */,
 				FB827D8A28D25AE7007BD833 /* Assets.xcassets */,
 				FB827D8C28D25AE7007BD833 /* Preview Content */,
 			);
@@ -137,7 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB827D8928D25AE6007BD833 /* ContentView.swift in Sources */,
+				FB827D8928D25AE6007BD833 /* ChecklistView.swift in Sources */,
+				FB2E7ED628D638C8008BAB9A /* ChecklistItem.swift in Sources */,
 				FB827D8728D25AE6007BD833 /* KilterSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
