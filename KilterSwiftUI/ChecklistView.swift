@@ -8,13 +8,6 @@
 import SwiftUI
 
 struct ChecklistView: View {
-    @State var checklistItems = [
-        ChecklistItem(name: "Walk the dog"),
-        ChecklistItem(name: "Brush my teeth"),
-        ChecklistItem(name: "Learn iOS development", isChecked: true),
-        ChecklistItem(name: "Soccer practice"),
-        ChecklistItem(name: "Eat ice cream", isChecked: true),
-    ]
     var body: some View {
         NavigationView {
             List {
