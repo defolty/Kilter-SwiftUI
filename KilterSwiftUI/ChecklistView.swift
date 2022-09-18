@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct ChecklistView: View {
+    
+    @ObservedObject var checklist = Checklist()
+    
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklistItems) { checklistItem in
+                ForEach(checklist.items) { checklistItem in
                     HStack {
                         Text(checklistItem.name)
                         Spacer()
@@ -19,23 +22,17 @@ struct ChecklistView: View {
                     }
                     .background(Color(UIColor.systemBackground))
                     .onTapGesture {
-                        if let matchingIndex = self.checklistItems.firstIndex(where: { $0.id == checklistItem.id }) {
-                            self.checklistItems[matchingIndex].isChecked.toggle()
+                        if let matchingIndex = self.checklist.items.firstIndex(where: { $0.id == checklistItem.id }) {
+                            self.checklist.items[matchingIndex].isChecked.toggle()
                         }
                     }
                 }
-                .onDelete(perform: deleteListItem)
-                .onMove(perform: moveListItem)
+                .onDelete(perform: checklist.deleteListItem)
+                .onMove(perform: checklist.moveListItem)
             }
             .navigationBarItems(trailing: EditButton())
             .navigationBarTitle("Checklist")
         }
-    }
-    func deleteListItem(whichElement: IndexSet) {
-        checklistItems.remove(atOffsets: whichElement)
-    }
-    func moveListItem(whichElement: IndexSet, destination: Int) {
-        checklistItems.move(fromOffsets: whichElement, toOffset: destination)
     }
 }
 
@@ -44,3 +41,4 @@ struct ContentView_Previews: PreviewProvider {
         ChecklistView()
     }
 }
+    
