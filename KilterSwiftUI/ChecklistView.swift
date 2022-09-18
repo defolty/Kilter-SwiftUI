@@ -42,7 +42,7 @@ struct ChecklistView: View {
             .navigationBarTitle("Checklist")
         }
         .sheet(isPresented: $newChecklistItemViewIsVisible) {
-            Text("dsadas")
+            NewChecklistItemView()
         }
     }
 }

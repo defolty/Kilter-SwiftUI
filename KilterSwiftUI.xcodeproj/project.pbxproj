@@ -14,6 +14,7 @@
 		FB827D8B28D25AE7007BD833 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB827D8A28D25AE7007BD833 /* Assets.xcassets */; };
 		FB827D8E28D25AE7007BD833 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB827D8D28D25AE7007BD833 /* Preview Assets.xcassets */; };
 		FBF3644528D798030048AD91 /* EditChecklistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3644428D798030048AD91 /* EditChecklistItemView.swift */; };
+		FBF3644728D79EED0048AD91 /* NewChecklistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3644628D79EED0048AD91 /* NewChecklistItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		FB827D8A28D25AE7007BD833 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB827D8D28D25AE7007BD833 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FBF3644428D798030048AD91 /* EditChecklistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditChecklistItemView.swift; sourceTree = "<group>"; };
+		FBF3644628D79EED0048AD91 /* NewChecklistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChecklistItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				FB827D8A28D25AE7007BD833 /* Assets.xcassets */,
 				FB827D8C28D25AE7007BD833 /* Preview Content */,
 				FBF3644428D798030048AD91 /* EditChecklistItemView.swift */,
+				FBF3644628D79EED0048AD91 /* NewChecklistItemView.swift */,
 			);
 			path = KilterSwiftUI;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				FB2E7ED828D639E2008BAB9A /* Checklist.swift in Sources */,
 				FB827D8928D25AE6007BD833 /* ChecklistView.swift in Sources */,
 				FB2E7ED628D638C8008BAB9A /* ChecklistItem.swift in Sources */,
+				FBF3644728D79EED0048AD91 /* NewChecklistItemView.swift in Sources */,
 				FB827D8728D25AE6007BD833 /* KilterSwiftUIApp.swift in Sources */,
 				FBF3644528D798030048AD91 /* EditChecklistItemView.swift in Sources */,
 			);
