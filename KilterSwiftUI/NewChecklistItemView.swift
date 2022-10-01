@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct NewChecklistItemView: View {
+    var checklist: ChecklistViewModel
+    @State var newItemName = ""
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
-            Text("Add new item")
+            Text("Add new item") 
             Form {
-                Text("Enter item name")
+                TextField("Enter item name", text: $newItemName)
                 Button(action: {
+                    let newChecklistItem = ChecklistItemModel(name: self.newItemName)
+                    self.checklist.items.append(newChecklistItem)
+                    self.checklist.printChecklistContents()
+                    self.presentationMode.wrappedValue.dismiss()
                 }) {
                     HStack {
                         Image(systemName: "plus.circle.fill")
                         Text("Add new item")
                     }
                 }
+                .disabled(newItemName.count == 0)
             }
             Text("Swipe down to cancel.")
         }
@@ -28,6 +37,6 @@ struct NewChecklistItemView: View {
 
 struct NewChecklistItemVIew_Previews: PreviewProvider {
     static var previews: some View {
-        NewChecklistItemView()
+        NewChecklistItemView(checklist: ChecklistViewModel())
     }
 }

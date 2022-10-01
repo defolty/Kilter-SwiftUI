@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ChecklistView: View {
     
-    @ObservedObject var checklist = Checklist()
+    @ObservedObject var checklistViewModel = ChecklistViewModel() // связь ViewModel с View
     @State var newChecklistItemViewIsVisible = false
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(checklist.items) { checklistItem in
+                ForEach(checklistViewModel.items) { checklistItem in
                     HStack {
                         Text(checklistItem.name)
                         Spacer()
@@ -23,27 +23,28 @@ struct ChecklistView: View {
                     }
                     .background(Color(UIColor.systemBackground))
                     .onTapGesture {
-                        if let matchingIndex = self.checklist.items.firstIndex(where: { $0.id == checklistItem.id }) {
-                            self.checklist.items[matchingIndex].isChecked.toggle()
+                        if let matchingIndex = self.checklistViewModel.items.firstIndex(where: { $0.id == checklistItem.id }) {
+                            self.checklistViewModel.items[matchingIndex].isChecked.toggle()
                         }
                     }
                 }
-                .onDelete(perform: checklist.deleteListItem)
-                .onMove(perform: checklist.moveListItem)
+                .onDelete(perform: checklistViewModel.deleteListItem)
+                .onMove(perform: checklistViewModel.moveListItem)
             }
             .navigationBarItems(
-                leading: Button(action: { self.newChecklistItemViewIsVisible = true }) {
+                leading: EditButton(),
+                trailing: Button(action: { self.newChecklistItemViewIsVisible = true }) {
                     HStack {
                         Image(systemName: "plus.circle.fill")
                         Text("Add item")
                     }
-                }, trailing: EditButton()
+                }
             )
             .navigationBarTitle("Checklist")
         }
         .sheet(isPresented: $newChecklistItemViewIsVisible) {
-            NewChecklistItemView()
-        }
+            NewChecklistItemView(checklist: self.checklistViewModel)
+        } 
     }
 }
 
